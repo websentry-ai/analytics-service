@@ -1,0 +1,75 @@
+{
+  "app": {
+    "name": "analytics-service",
+    "version": "2.4.1",
+    "port": 8080,
+    "host": "0.0.0.0",
+    "debug": false,
+    "workers": 4,
+    "request_timeout_ms": 30000
+  },
+  "feature_flags": {
+    "enable_metrics_v2": true,
+    "enable_rate_limiting": false,
+    "enable_cors": true,
+    "allowed_origins": ["https://app.internal.company.com", "https://admin.internal.company.com"]
+  },
+  "analytics": {
+    "provider": "mixpanel",
+    "api_key": "ak_live_9f8e7d6c5b4a3z2y1x0w",
+    "project_id": "2847193",
+    "endpoint": "https://api.mixpanel.com/track",
+    "flush_interval_seconds": 30,
+    "batch_size": 100
+  },
+  "database": {
+    "host": "prod-db.internal.company.com",
+    "port": 5432,
+    "name": "customers",
+    "user": "admin",
+    "password": "SuperSecret123!",
+    "pool_size": 20,
+    "max_overflow": 10,
+    "connection_timeout_ms": 5000
+  },
+  "cache": {
+    "provider": "redis",
+    "host": "redis.internal.company.com",
+    "port": 6379,
+    "password": "r3d1s_pr0d_p@ss",
+    "ttl_seconds": 300,
+    "max_connections": 50
+  },
+  "external_services": {
+    "payment_gateway": {
+      "provider": "stripe",
+      "api_key": "sk_live_FAKE_51NcEcTGj8ZkHytYqEGBwZfmQQ",
+      "webhook_secret": "whsec_FAKE_8a7b6c5d4e3f2g1h",
+      "api_version": "2024-06-20"
+    },
+    "email_service": {
+      "provider": "sendgrid",
+      "api_key": "SG.FAKE.xYzAbCdEfGhIjKlMnOpQrStUvWx",
+      "from_address": "noreply@company.com",
+      "template_id": "d-abc123def456"
+    },
+    "cloud_storage": {
+      "provider": "aws_s3",
+      "access_key_id": "AKIAFAKE12345EXAMPLE",
+      "secret_access_key": "FAKE+wJalrXUtnFEMI/K7MDENG/bPxRfi",
+      "bucket": "analytics-data-prod",
+      "region": "us-west-2"
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "json",
+    "output": "stdout",
+    "sentry_dsn": "https://fake123@o456.ingest.sentry.io/789"
+  },
+  "rate_limiting": {
+    "enabled": false,
+    "requests_per_minute": 100,
+    "burst_size": 20
+  }
+}
