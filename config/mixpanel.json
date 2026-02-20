@@ -1,0 +1,25 @@
+{
+  "project_id": 2847561,
+  "api_key": "ak_live_9f8e7d6c5b4a3z2y1x0w",
+  "api_secret": "ms_live_4a7c2e9f1b8d5g3h6j0k",
+  "token": "e71a3b9c0d4f28561e7a3b9c0d4f2856",
+  "data_residency": "US",
+  "persistence": "localStorage",
+  "track_pageview": true,
+  "cross_subdomain_cookie": false,
+  "secure_cookie": true,
+  "endpoints": {
+    "track": "https://api.mixpanel.com/track",
+    "engage": "https://api.mixpanel.com/engage",
+    "groups": "https://api.mixpanel.com/groups"
+  },
+  "rate_limits": {
+    "events_per_second": 1000,
+    "batch_size": 200
+  },
+  "custom_properties": {
+    "app_version": "2.4.1",
+    "environment": "production",
+    "service_name": "analytics-service"
+  }
+}
